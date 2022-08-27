@@ -3,11 +3,13 @@ import './App.css';
 
 import {Routes , Route} from 'react-router-dom'
 import MainLayout from './layout/main';
-
 import Home from './pages/home/Home'
 import About from './pages/About/About';
 import Conatct from './pages/contact/Conatct';
 import DashBoard from './pages/dashbaord/DashBoard';
+import TestingPage from './pages/testing/TestingPage';
+import Main from './main';
+import { TestId } from './sections/Test';
 
 
 
@@ -27,7 +29,12 @@ function App() {
         <Route path='contact' element ={<Conatct/>}/>
         {/* here mainlaout will not be be shared  means show */}
         {/* <Route path ='dashboard' element ={<DashBoard/>}/> */}
-
+        {/* **********______________________tesing____________________$$$$$ */}
+        <Route path='/test' element={<Main/>}>
+        <Route index element={<TestingPage/>}/>
+        {/* sharing footer and header layout as common */}
+        <Route path=':id' element ={<TestId/>}/>
+        </Route>
       </Routes>
     </div>
   );
